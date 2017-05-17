@@ -35,10 +35,20 @@ new Vue({
 			this.$set('events', events)
 		},
 		addEvent: function(){
-			if (this.event.name) {
+			/*if (this.event.name) {
 				this.events.push(this.event)
 				this.event = { name: '', description: '', date: '' }
-			}
+			} */
+			this.$http.get('api/events').then( response => {
+				console.log(response.body.title);
+			});
+			/*this.$http.get('api/events').success(function(events) {
+				//this.$set('events', events);
+				console.log(events)
+			}).error(function(error) {
+				console.log(error);
+			});*/
+
 		},
 		deleteEvent: function(index) {
 			if(confirm("Are you sure you want to delete this event?")) {

@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Aula 01 - vue 
+    link(rel='stylesheet', type='text/css', href='dist/css/bootstrap.min.css')
+  body
+    nav.navbar.navbar-default
+      .container-fluid
+        a.navbar-brand
+          i.glyphicon.glyphicon-bullhorn
+          |  Vue Events Bulletin Board
+    #events.container
+      // add an event form
+      .col-sm-6
+        .panel.panel-default
+          .panel-heading
+            h3 Add an Event
+          .panel-body
+            .form-group
+              input.form-control(placeholder='Event Name', v-model='event.name')
+            .form-group
+              textarea.form-control(placeholder='Event Description', v-model='event.description')
+            .form-group
+              input.form-control(type='date', placeholder='Date', v-model='event.date')
+            button.btn.btn-primary(v-on:click='addEvent') Submit
+      // show the events
+      .col-sm-6
+        .list-group
+          a.list-group-item(href='#', v-for='event in events')
+            h4.list-group-item-heading
+              i.glyphicon.glyphicon-bullhorn
+              | 							{{ event.name }}
+            h5
+              i.glyphicon.glyphicon-calendar(v-if='event.date')
+              | 							{{ event.date }}
+            p.list-group-item-text(v-if='event.description') {{ event.description }}
+            button.btn.btn-xs.btn-danger(v-on:click='deleteEvent') Delete
+    script(src='vue/dist/vue.js')
+    script(src='vue/dist/vue-resource.js')
+    script(src='javascripts/app.js')
