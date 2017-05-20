@@ -14,3 +14,18 @@ http://www.vuejs-brasil.com.br/aplicacoes-com-vuejs-pensando-em-componentes/
 
 ## Adicionado bootstrap
 https://codecasts.com.br/lesson/vue-confee-02-bootstrap-css
+
+## 7 dicas essenciais para um excelente Design de API REST
+http://sensedia.com/blog/apis/design-de-api-rest/
+
+## Desenvolvendo componentes com vue 2
+http://ednilsonamaral.me/desenvolvendo-componentes-com-vue-js-2/
+
+## Higher-Order Components em Vue.js 2
+http://www.vuejs-brasil.com.br/higher-order-components-em-vue-js-2/
+
+## Vue-router
+http://www.vuejs-brasil.com.br/vue-router/
+
+## Theme HTML5 Templates Free
+https://html5up.net/editorial
