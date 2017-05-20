@@ -2,6 +2,7 @@
 	
 div.inner
 	top
+	h1 Login
 	login
 
 </template>
