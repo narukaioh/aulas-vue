@@ -5,22 +5,15 @@ nav#menu
 	ul
 		li: router-link(to='/') Homepage
 		li: router-link(to='/login') Login
-		li: router-link(to='/login/users') Users
-		li: router-link(to='/login/account') Cadastro
+		li: router-link(to='/login/account') Cadastre-se
 		li
 			span.opener Submenu
 			ul
-				li: a(href='/login/account') Meu cadastro
-				li: a(href='#') Lorem Dolor
-				li: a(href='#') Lorem Dolor
-				li: a(href='#') Lorem Dolor
-		li: a(href="#") Homepage
-		li: a(href="#") Generic
-		li
-			span.opener Submenu
-			ul
-				li: a(href='#') Lorem Dolor
-				li: a(href='#') Lorem Dolor
-				li: a(href='#') Lorem Dolor
-				li: a(href='#') Lorem Dolor
+				li: router-link(to='/users') Usuários
+				li: router-link(to='/user/foo') Meu cadastro
+				li: router-link(to='/articles') Artigos
+				li: router-link(to='/article/foo') Artigo
+				li: router-link(to='/categories') Categorias
+				li: router-link(to='/category/foo') Categoria
+
 </template>

@@ -1,23 +1,23 @@
 <template lang="pug">
 header#header
-	a.logo(href='index.html')
+	a.logo(href='#')
 		strong {{title}}
-		|  by HTML5 UP
+		|  by {{author}}
 	ul.icons
 		li
-			a.icon.fa-twitter(href='#')
+			a.icon.fa-twitter(v-bind:href='social.twitter')
 				span.label Twitter
 		li
-			a.icon.fa-facebook(href='#')
+			a.icon.fa-facebook(v-bind:href='social.facebook')
 				span.label Facebook
 		li
-			a.icon.fa-snapchat-ghost(href='#')
+			a.icon.fa-snapchat-ghost(v-bind:href='social.snapchat')
 				span.label Snapchat
 		li
-			a.icon.fa-instagram(href='#')
+			a.icon.fa-instagram(v-bind:href='social.instagram')
 				span.label Instagram
 		li
-			a.icon.fa-medium(href='#')
+			a.icon.fa-medium(v-bind:href='social.medium')
 				span.label Medium
 </template>
 
@@ -26,7 +26,15 @@ export default {
 	name: 'app',
 	data () {
 		return {
-			title: 'teste'
+			title: 'Redes sociais',
+			author: 'Ju Dantas',
+			social: {
+				facebook: 'https://facebook.com/narukaioh',
+				twitter: 'https://twitter.com/narukaioh',
+				snapchat: 'https://snapchat.com/narukaioh',
+				intagram: 'https://instagram.com/jucienyds',
+				medium: '#'
+			}
 		}
 	}
 
