@@ -29,3 +29,6 @@ http://www.vuejs-brasil.com.br/vue-router/
 
 ## Theme HTML5 Templates Free
 https://html5up.net/editorial
+
+## Tutorial VueX
+http://www.vuejs-brasil.com.br/vuex/

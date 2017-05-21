@@ -18,3 +18,7 @@
 						li: button(class='special', type='button', v-on:click="login") Cadastrar
 
 </template>
+
+<script>
+
+</script>
