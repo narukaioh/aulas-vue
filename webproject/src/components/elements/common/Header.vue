@@ -1,4 +1,5 @@
 <template lang="pug">
+
 header#header
 	a.logo(href='#')
 		strong {{title}}
@@ -37,6 +38,5 @@ export default {
 			}
 		}
 	}
-
 }
 </script>

@@ -1,24 +1,14 @@
+import Http from './client' 
 import axios from 'axios'
 
-const service = () => {
-	const service = (url, method, data, callback) => {
-		axios({
-			method: method,
-			data: data,
-			url: url,
-			responseType: 'json'
-		})
-		.then(callback)
-	}
-} 
-
-export const funfa = () => { console.log("funfa sim!") }
-
-export const addUser = data => {
-		console.log("uhum!")
-		funfa()
-		service('/api/users','post', data, res => {
-			console.log("foi enviado com sucesso!")
-		})
+export const create = user => {
+	Http.post('/users', user)
+	.then(data =>{
+		console.log(data)
+	})
+	.catch(err => {
+		console.log(err)
+	})
 }
 
+export default create;

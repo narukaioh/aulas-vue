@@ -36,9 +36,7 @@ export default {
 	},
 	methods: {
 		login: user => {
-			console.log(user)
-			console.log(service.addUser)
-			//service.addUser(user);
+			service(user)
 		}
 	}
 }
