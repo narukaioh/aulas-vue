@@ -1,8 +1,6 @@
 import Vue from 'vue'
-import VueX from 'vuex'
 import VueRouter from 'vue-router'
 
-Vue.use(VueX)
 Vue.use(VueRouter)
 
 import App from './App.vue'
@@ -37,6 +35,5 @@ const router = new VueRouter({ history: true, routes})
 new Vue({
   el: '#app',
   router,
-  store: new Vuex.Store({}),
   render: h => h(App)
 })
