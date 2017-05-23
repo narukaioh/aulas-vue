@@ -1,7 +1,7 @@
 <template lang="pug">
 div.inner
 	top
-	h1 Usuários
+	h1 Usuários 123
 	
 	div.table-wrapper
 		table
@@ -42,6 +42,7 @@ div.inner
 <script>
 
 import Header from '../common/Header.vue'
+import { listUsers } from '../../../modules/service'
 
 export default {
 	name: 'app',
@@ -52,8 +53,18 @@ export default {
 			login: 'narukaioh'
 		}
 	},
+	mounted () {
+		this.list()
+	},
 	components: {
 		'top': Header
+	},
+	methods: {
+		list: () => {
+			//const self = this
+			var data = listUsers()
+			console.log(data)
+		}
 	}
 }
 

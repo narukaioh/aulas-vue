@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import service from '../../../modules/service'
+import { addUser } from '../../../modules/service'
 
 export default {
 	data () {
@@ -36,7 +36,7 @@ export default {
 	},
 	methods: {
 		login: user => {
-			service(user)
+			addUser(user)
 		}
 	}
 }
