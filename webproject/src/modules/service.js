@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import Http from './client' 
 
 const addUser = user => {
@@ -14,8 +13,9 @@ const addUser = user => {
 const listUsers = obj => {
 	Http.get('/users')
 	.then(res => {
-		res.data.users.forEach( (item, index) => obj.push(item) )
+		//res.data.users.forEach( (item, index) => obj.push(item) )
 		//Vue.set(ref, name, res.data.users)
+		obj.$set('users', res.data.users)
 	})
 }
 

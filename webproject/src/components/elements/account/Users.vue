@@ -42,7 +42,7 @@ export default {
 	},
 	methods: {
 		listUsers () {
-			listUsers(this.users)
+			listUsers(this)
 		}
 	}
 }
