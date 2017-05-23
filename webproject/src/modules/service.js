@@ -1,7 +1,7 @@
+import Vue from 'vue'
 import Http from './client' 
-import axios from 'axios'
 
-export const create = user => {
+const addUser = user => {
 	Http.post('/users', user)
 	.then(data =>{
 		console.log(data)
@@ -11,4 +11,12 @@ export const create = user => {
 	})
 }
 
-export default create;
+const listUsers = obj => {
+	Http.get('/users')
+	.then(res => {
+		res.data.users.forEach( (item, index) => obj.push(item) )
+		//Vue.set(ref, name, res.data.users)
+	})
+}
+
+export { addUser, listUsers }

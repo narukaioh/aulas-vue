@@ -25,31 +25,24 @@ div.inner
 <script>
 
 import Header from '../common/Header.vue'
-import axios from 'axios'
+import { listUsers } from '../../../modules/service'
 
 export default {
 	name: 'app',
 	data () {
 		return {
-			name: 'Ju Dantas',
-			email: 'jucienyds@gmail.com',
-			login: 'narukaioh',
 			users: []
 		}
 	},
-	ready: {
+	mounted () {
 		this.listUsers()
 	},
 	components: {
 		'top': Header
 	},
 	methods: {
-		listUsers: () => {
-			console.log("aquiwhiuaewhiuheiuhiuhfiue");
-			axios.get('http://localhost:3000/api/users')
-			.then(data => {
-				this.users = data.users
-			})
+		listUsers () {
+			listUsers(this.users)
 		}
 	}
 }
