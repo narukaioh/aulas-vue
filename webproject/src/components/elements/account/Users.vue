@@ -13,35 +13,19 @@ div.inner
 					th Edit
 					th Remove
 			tbody
-				tr
-					td Jucieny Dantas
-					td narukaioh
-					td jucienyds@gmail.com
+				tr(v-for="user in users")
+					td {{user.name}}
+					td {{user.login}}
+					td {{user.email}}
 					td: button(class="icon fa-edit")
 					td: button(class="icon fa-remove")
-				tr
-					td Jucieny Dantas
-					td narukaioh
-					td jucienyds@gmail.com
-					td: button(class="icon fa-edit")
-					td: button(class="icon fa-remove")
-				tr
-					td Jucieny Dantas
-					td narukaioh
-					td jucienyds@gmail.com
-					td: button(class="icon fa-edit")
-					td: button(class="icon fa-remove")
-				tr
-					td Jucieny Dantas
-					td narukaioh
-					td jucienyds@gmail.com
-					td: button(class="icon fa-edit")
-					td: button(class="icon fa-remove")
+
 </template>
 
 <script>
 
 import Header from '../common/Header.vue'
+import axios from 'axios'
 
 export default {
 	name: 'app',
@@ -49,11 +33,24 @@ export default {
 		return {
 			name: 'Ju Dantas',
 			email: 'jucienyds@gmail.com',
-			login: 'narukaioh'
+			login: 'narukaioh',
+			users: []
 		}
+	},
+	ready: {
+		this.listUsers()
 	},
 	components: {
 		'top': Header
+	},
+	methods: {
+		listUsers: () => {
+			console.log("aquiwhiuaewhiuheiuhiuhfiue");
+			axios.get('http://localhost:3000/api/users')
+			.then(data => {
+				this.users = data.users
+			})
+		}
 	}
 }
 
