@@ -45,8 +45,6 @@ export default {
 			listUsers().then(res => this.users = res.users)
 		},
 		removeUser(id) {
-			console.log(id)
-			console.log(removeUser)
 			removeUser(id).then(res => this.message = res.message )
 		}
 	}
