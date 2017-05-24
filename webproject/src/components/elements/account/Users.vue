@@ -25,6 +25,7 @@ div.inner
 <script>
 
 import Header from '../common/Header.vue'
+import { set } from 'vue'
 import { listUsers } from '../../../modules/service'
 
 export default {
@@ -42,7 +43,10 @@ export default {
 	},
 	methods: {
 		listUsers () {
-			listUsers(this)
+			listUsers().then(res => {
+				this.$set(this.users,'users',res.users)
+			})
+			console.log(this.users)
 		}
 	}
 }

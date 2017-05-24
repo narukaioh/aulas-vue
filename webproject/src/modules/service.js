@@ -10,13 +10,14 @@ const addUser = user => {
 	})
 }
 
-const listUsers = obj => {
-	Http.get('/users')
+const listUsers = () => {
+	/*return Http.get('/users')
 	.then(res => {
-		//res.data.users.forEach( (item, index) => obj.push(item) )
-		//Vue.set(ref, name, res.data.users)
+		res.data.users.forEach( (item, index) => obj.push(item) )
+		Vue.set(ref, name, res.data.users)
 		obj.$set('users', res.data.users)
-	})
+	})*/
+	return Http.get('/users').then(res => res.data)
 }
 
 export { addUser, listUsers }
