@@ -1,23 +1,19 @@
 import Http from './client' 
 
 const addUser = user => {
-	Http.post('/users', user)
-	.then(data =>{
-		console.log(data)
-	})
-	.catch(err => {
-		console.log(err)
-	})
+	return Http.post('/users', user).then(res => res.data)
 }
 
 const listUsers = () => {
-	/*return Http.get('/users')
-	.then(res => {
-		res.data.users.forEach( (item, index) => obj.push(item) )
-		Vue.set(ref, name, res.data.users)
-		obj.$set('users', res.data.users)
-	})*/
 	return Http.get('/users').then(res => res.data)
 }
 
-export { addUser, listUsers }
+const listCategories = () => {
+	return Http.get('/categories').then(res => res.data)
+}
+
+const removeUser = id => {
+	return Http.delete('/users/'+id).then(res => res.data )
+}
+
+export { addUser, listUsers, listCategories, removeUser }

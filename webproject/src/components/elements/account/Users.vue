@@ -18,15 +18,14 @@ div.inner
 					td {{user.login}}
 					td {{user.email}}
 					td: button(class="icon fa-edit")
-					td: button(class="icon fa-remove")
+					td: button(v-bind:id="user._id", v-on:click="removeUser(user._id)", class="icon fa-remove")
 
 </template>
 
 <script>
 
 import Header from '../common/Header.vue'
-import { set } from 'vue'
-import { listUsers } from '../../../modules/service'
+import { listUsers, removeUser } from '../../../modules/service'
 
 export default {
 	name: 'app',
@@ -43,10 +42,12 @@ export default {
 	},
 	methods: {
 		listUsers () {
-			listUsers().then(res => {
-				this.$set(this.users,'users',res.users)
-			})
-			console.log(this.users)
+			listUsers().then(res => this.users = res.users)
+		},
+		removeUser(id) {
+			console.log(id)
+			console.log(removeUser)
+			removeUser(id).then(res => this.message = res.message )
 		}
 	}
 }

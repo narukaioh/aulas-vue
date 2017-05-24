@@ -1,6 +1,9 @@
 <template lang="pug">
 	
 	section
+		
+		p(v-bind:class="classe") {{message}}
+
 		form(method='post', action='#')
 			div(class="row uniform")
 				div(class='6u 12u$(xsmall)')
@@ -31,14 +34,46 @@ export default {
 				password: '',
 				cpassword: '',
 				login: ''
-			}
+			},
+			message: '',
+			classe: ''
 		}
 	},
+	mounted () {
+
+	},
 	methods: {
-		login: user => {
-			addUser(user)
+		login (user) {
+			addUser(user).then(res => {
+				if (res.status) { this.classe = 'sucesso' }
+				else { this.classe = 'problema' }
+				this.message = res.message
+			})
 		}
 	}
 }
 
 </script>
+
+<style>
+	
+	.sucesso, .problema {
+		border: 1px solid;
+		border-radius: 3px;
+		padding: 3px 0px;
+		text-align: center; 
+	}
+	.sucesso {
+		color: #3c763d;
+		background-color: #dff0d8;
+		border-color: #d6e9c6;
+		font-weight: bold;
+	}
+	.problema {
+		color: #a94442;
+		background-color: #f2dede;
+		border-color:#ebccd1;
+		font-weight: bold;
+	}
+
+</style>
