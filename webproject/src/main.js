@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import App from './App.vue'
+/*import App from './App.vue'
 import Login from './components/Login.vue'
 import Home from './components/Home.vue'
 import Account from './components/Register.vue'
@@ -28,6 +28,31 @@ const routes = [
 	{ path: '/users', component: Users }, // Listagem de usuarios
 	{ path: '/*', component: Home }
 
+]*/
+
+import App from './App.vue'
+import Login from './components/Login.vue'
+import Home from './components/Home.vue'
+import Register from './components/Register.vue'
+import Article from './components/Article.vue'
+import Articles from './components/Articles.vue'
+import Category from './components/Category.vue'
+import Categories from './components/Categories.vue'
+
+// Paginas restritas
+import AccArticle from './components/elements/account/Article.vue'
+import AccArticles from './components/elements/account/Articles.vue'
+import AccCategory from './components/elements/account/Category.vue'
+import AccCategories from './components/elements/account/Categories.vue'
+
+const routes = [
+	{ path: '/', component: Home }, 
+	{ path: '/login', component: Login }, 
+	{ path: '/register', component: Register }, 
+	{ path: '/article/:id', component: Article }, 
+	{ path: '/articles', component: Articles },
+	{ path: '/category/:id', component: Category }, 
+	{ path: '/categories', component: Categories } 
 ]
 
 const router = new VueRouter({ history: true, routes})
