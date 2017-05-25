@@ -8,17 +8,17 @@ div.inner
 			thead
 				tr
 					th Name
-					th Login
+					th Login 123
 					th Email
 					th Edit
 					th Remove
 			tbody
-				tr(v-for="user in users")
-					td {{user.name}}
+				tr(v-for="user in users" v-bind:index="index")
+					td: router-link(v-bind:to="'/user/'+user._id") {{user.name}}
 					td {{user.login}}
 					td {{user.email}}
 					td: button(class="icon fa-edit")
-					td: button(v-bind:id="user._id", v-on:click="removeUser(user._id)", class="icon fa-remove")
+					td: button(v-bind:id="user._id", v-on:click="removeUser(user._id, index)", class="icon fa-remove")
 
 </template>
 
@@ -31,7 +31,8 @@ export default {
 	name: 'app',
 	data () {
 		return {
-			users: []
+			users: [],
+			index: ''
 		}
 	},
 	mounted () {
@@ -44,8 +45,13 @@ export default {
 		listUsers () {
 			listUsers().then(res => this.users = res.users)
 		},
-		removeUser(id) {
-			removeUser(id).then(res => this.message = res.message )
+		removeUser(id, index) {
+			removeUser(id).then(res => {
+				if (res.status) {
+					this.users.splice(index, 1)
+				}
+				this.message = res.message
+			} )
 		}
 	}
 }

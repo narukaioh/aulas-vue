@@ -6,6 +6,10 @@ const addUser = user => {
 	return Http.post('/users', user).then(res => res.data)
 }
 
+const getUser = id => {
+	return Http.get('/users/:id').then(res => res.data )
+}
+
 const listUsers = () => {
 	return Http.get('/users').then(res => res.data)
 }
@@ -14,8 +18,8 @@ const removeUser = id => {
 	return Http.delete('/users/'+id).then(res => res.data )
 }
 
-const editUser = id => {
-	return Http.put('/users/'+id).then(res => res.data )	
+const editUser = (id, user) => {
+	return Http.put('/users/'+id, user).then(res => res.data )	
 }
 
 // categories
@@ -48,4 +52,4 @@ const editArticle = id => {
 	return Http.put('/articles/'+id).then(res => res.data )	
 }
 
-export { addUser, listUsers, removeUser, editUser, addCategory, listCategories, removeCategory, editCategory, addArticle, listArticles, removeArticle, editArticle }
+export { addUser, getUser, listUsers, removeUser, editUser, addCategory, listCategories, removeCategory, editCategory, addArticle, listArticles, removeArticle, editArticle }

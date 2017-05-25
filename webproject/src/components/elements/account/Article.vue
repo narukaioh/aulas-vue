@@ -1,3 +1,3 @@
 <template lang="pug">
-	p Cadastro de categoria
+	p Cadastro de artigo
 </template>
