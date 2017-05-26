@@ -2,16 +2,30 @@
 section#banner
 	.content
 		header
-			h1
-				| Hi, I’m Editorial
-				br
-				| by HTML5 UP
+			h1 {{article.title}}
 			p A free and fully responsive site template
-		p
-			| Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.
+		p {{article.description}}
 		ul.actions
 			li
 				a.button.big(href='#') Learn More
 	span.image.object
 		img(src='images/pic10.jpg', alt='')
 </template>
+
+<script>
+
+export default {
+	data (){
+		return {
+			article: {
+				title: '',
+				description: ''
+			}
+		}
+	},
+	mounted (){
+		console.log(this)
+	}
+}
+
+</script>

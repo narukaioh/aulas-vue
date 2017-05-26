@@ -2,27 +2,38 @@
 
 div.inner
 	top
+	section(id="banner", v-for='article in articles')
+		.content
+			header
+				h1: router-link(v-bind:to="'/users/'+article.slug") {{article.title}}
+				p {{ article.subtitle }}
+			p {{article.body}}
+		span.image.object
+			img(v-bind:src='article.image', v-bind:alt='title')
 
 </template>
 
 <script>
 
 import Header from './elements/common/Header.vue'
-import Article from './elements/home/MainArticle'
+import { listArticles } from '../modules/service'
 
 export default {
 	data () {
 		return {
-			articles: [
-				{ title: 'Olaaaaaaaaaaar', description: 'HIEAUHEAIUHAEI HAEIUH AEIUH EIAUHIUAEH' },
-				{ title: 'Olaaaaaaaaaaar', description: 'HIEAUHEAIUHAEI HAEIUH AEIUH EIAUHIUAEH' },
-				{ title: 'Olaaaaaaaaaaar', description: 'HIEAUHEAIUHAEI HAEIUH AEIUH EIAUHIUAEH' }
-			]
+			articles: []
 		}
 	},
+	mounted () {
+		this.getAllArticles()
+	},
 	components: {
-		'top': Header,
-		'article': Article
+		'top': Header
+	},
+	methods: {
+		getAllArticles () {
+			listArticles().then(res => this.articles = res.articles )
+		}
 	}
 }
 
