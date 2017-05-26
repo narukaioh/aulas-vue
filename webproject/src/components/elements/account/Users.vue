@@ -8,13 +8,13 @@ div.inner
 			thead
 				tr
 					th Name
-					th Login 123
+					th Login
 					th Email
 					th Edit
 					th Remove
 			tbody
 				tr(v-for="user in users" v-bind:index="index")
-					td: router-link(v-bind:to="'/user/'+user._id") {{user.name}}
+					td: router-link(v-bind:to="'/account/user/'+user._id") {{user.name}}
 					td {{user.login}}
 					td {{user.email}}
 					td: button(class="icon fa-edit")

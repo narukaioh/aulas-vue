@@ -5,7 +5,7 @@ div.inner
 	section(class='row')
 		div(class='3u')
 			figure(class="image fit")
-				img(src="https://pbs.twimg.com/profile_images/378800000112143013/d62ade0363e7a639c5117c1eeb6225fd_400x400.jpeg", alt="Foto")
+				img(v-bind:src="user.image", alt="Foto")
 		div(class='9u')
 			h3 Nome: {{user.name}}
 			h3 Login: {{user.login}}
@@ -40,7 +40,8 @@ export default {
 				email: '',
 				login: '',
 				password: '',
-				cpassword: ''
+				cpassword: '',
+				image: ''
 			}
 		}
 	},
@@ -53,8 +54,7 @@ export default {
 	methods: {
 		getUser () {
 			getUser(this.$route.params.id).then(res => {
-				console.log(res)
-				//this.user = res.user
+				this.user = res
 			})
 		},
 		editUser (user) {

@@ -7,7 +7,7 @@ const addUser = user => {
 }
 
 const getUser = id => {
-	return Http.get('/users/:id').then(res => res.data )
+	return Http.get('/users/'+id).then(res => res.data.user[0] )
 }
 
 const listUsers = () => {

@@ -8,9 +8,9 @@
 				div(class='12u$')
 					input(type="password", v-model='password', placeholder='Password')
 				div(class='2u 12u$(xsmall)')
-					router-link(to='/login/account') Cadastre-se	
+					router-link(to='/register') Cadastre-se	
 				div(class='4u 12u$(xsmall)')
-					router-link(to='/login/forgotpassword') Esqueci minha senha			
+					router-link(to='/register/password') Esqueci minha senha			
 				div(class='12u$')
 					ul.actions
 						li: button(class='button fit special', type='button', v-on:click="login") Login
