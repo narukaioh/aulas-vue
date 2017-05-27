@@ -38,18 +38,21 @@ const editCategory = id => {
 }
 
 // articles
+const getArticle = slug => {
+	return Http.get('/articles/'+slug).then(res => res.data.article[0] )
+}
 const addArticle = article => {
 	return Http.post('/articles', article).then(res => res.data)
 }
 const listArticles = () => {
 	return Http.get('/articles').then(res => res.data)
 }
-const removeArticle = id => {
-	return Http.delete('/articles/'+id).then(res => res.data )
+const removeArticle = slug => {
+	return Http.delete('/articles/'+slug).then(res => res.data )
 }
 
 const editArticle = id => {
 	return Http.put('/articles/'+id).then(res => res.data )	
 }
 
-export { addUser, getUser, listUsers, removeUser, editUser, addCategory, listCategories, removeCategory, editCategory, addArticle, listArticles, removeArticle, editArticle }
+export { addUser, getUser, listUsers, removeUser, editUser, addCategory, listCategories, removeCategory, editCategory, getArticle, addArticle, listArticles, removeArticle, editArticle }

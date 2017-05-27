@@ -5,7 +5,7 @@ div.inner
 	section(id="banner", v-for='article in articles')
 		.content
 			header
-				h1: router-link(v-bind:to="'/users/'+article.slug") {{article.title}}
+				h1: router-link(v-bind:to="'/article/'+article.slug") {{article.title}}
 				p {{ article.subtitle }}
 			p {{article.body}}
 		span.image.object
