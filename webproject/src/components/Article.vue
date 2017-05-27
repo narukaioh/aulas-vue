@@ -31,7 +31,7 @@ export default {
 	},
 	methods:{
 		getArticle (){
-			getArticle(this.$route.params.id).then(res => {
+			getArticle(this.$route.params.slug).then(res => {
 				this.data = res
 			})
 		}

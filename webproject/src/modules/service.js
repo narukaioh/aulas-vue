@@ -38,6 +38,11 @@ const editCategory = id => {
 }
 
 // articles
+// implementar rota no backend - link example: https://gist.github.com/JedWatson/8519978
+const getAllArticlesByCategory = id => {
+	return Http.get('/category/'+id+'/articles').then(res => res.data)
+}
+
 const getArticle = slug => {
 	return Http.get('/articles/'+slug).then(res => res.data.article[0] )
 }
