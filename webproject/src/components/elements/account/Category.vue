@@ -3,14 +3,16 @@ div.inner
 	section
 		header
 			h1 Cadastrar categoria
-		
+		p {{message}}
 		div.inner
-			div(class="12u$")
-				input(type="text", placeholder="Nome da Categoria" v-model="category.name")
-			div(class="12u$")
-				textarea(placeholder="Descrição da categoria" v-model="category.description")
-			div(class="6u")
-				button(v-on:click="saveCategory(category)") Salvar
+			form(method='post', action='#')
+				div(class="row uniform")
+					div(class="12u$")
+						input(type="text", placeholder="Nome da Categoria" v-model="category.name")
+					div(class="12u$")
+						textarea(placeholder="Descrição da categoria" v-model="category.description")
+					div(class="6u")
+						button(v-on:click="saveCategory(category)", type="button") Salvar
 				
 </template>
 
@@ -26,12 +28,18 @@ export default {
 				name: '',
 				description: ''
 			},
-			message: {}
+			message: ''
 		}
 	},
 	methods: {
 		saveCategory (category) {
-			addCategory(category).then(res => this.message = res.message )
+			if(category.name == ''){
+				this.message = 'É necessário digitar o nome para a categoria.'
+			}else{
+				addCategory(category).then(res => {
+					this.message = res.message
+				})
+			}
 		}
 	},
 	components: {}

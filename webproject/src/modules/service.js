@@ -7,7 +7,7 @@ const addUser = user => {
 }
 
 const getUser = id => {
-	return Http.get('/users/'+id).then(res => res.data.user[0] )
+	return Http.get('/users/'+id).then(res => res.data.user)
 }
 
 const listUsers = () => {
@@ -23,8 +23,17 @@ const editUser = (id, user) => {
 }
 
 // categories
+// implementar rota no backend - link example: https://gist.github.com/JedWatson/8519978
+const getAllArticlesByCategory = slug => {
+	return Http.get('/categories/'+slug+'/articles').then(res => res.data)
+}
+
+const getCategory = id => {
+	return Http.get('/category/'+id).then(res => res.data )
+}
+
 const addCategory = category => {
-	return Http.post('/categories', category).then(res => res.data)
+	return Http.post('/categories', category).then(res => res.data )
 }
 const listCategories = () => {
 	return Http.get('/categories').then(res => res.data)
@@ -38,10 +47,6 @@ const editCategory = id => {
 }
 
 // articles
-// implementar rota no backend - link example: https://gist.github.com/JedWatson/8519978
-const getAllArticlesByCategory = id => {
-	return Http.get('/category/'+id+'/articles').then(res => res.data)
-}
 
 const getArticle = slug => {
 	return Http.get('/articles/'+slug).then(res => res.data.article[0] )
@@ -60,4 +65,4 @@ const editArticle = id => {
 	return Http.put('/articles/'+id).then(res => res.data )	
 }
 
-export { addUser, getUser, listUsers, removeUser, editUser, addCategory, listCategories, removeCategory, editCategory, getArticle, addArticle, listArticles, removeArticle, editArticle }
+export { addUser, getUser, listUsers, removeUser, editUser, getCategory, getAllArticlesByCategory, addCategory, listCategories, removeCategory, editCategory, getArticle, addArticle, listArticles, removeArticle, editArticle }

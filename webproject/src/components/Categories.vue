@@ -14,7 +14,7 @@ div.inner
 <script>
 
 import Header from './elements/common/Header.vue'
-import { getAllCategories } from '../modules/service'
+import { getCategory, getAllCategories } from '../modules/service'
 
 export default {
 
@@ -30,6 +30,7 @@ export default {
 		'top': Header
 	},
 	methods: {
+		get
 		getAllCategories () {
 			getAllCategories().then(res => {
 				this.categories = res.categories

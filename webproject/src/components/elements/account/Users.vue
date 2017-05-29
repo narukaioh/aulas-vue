@@ -2,7 +2,7 @@
 div.inner
 	top
 	h1 Usuários
-	
+	p {{message}}	
 	div.table-wrapper
 		table
 			thead
@@ -32,7 +32,8 @@ export default {
 	data () {
 		return {
 			users: [],
-			index: ''
+			index: '',
+			message: ''
 		}
 	},
 	mounted () {
