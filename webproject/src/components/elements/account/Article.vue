@@ -24,7 +24,9 @@ export default {
 			article: {
 				title: '',
 				body: '',
-				category: '',
+				categories: {
+					_id: '',
+				},
 				subtitle: '',
 			},
 			categories: [],
@@ -44,7 +46,7 @@ export default {
 			addArticle(article).then(res => {
 				console.log(res)
 				this.message = res.message
-				this.article = []
+				//this.article = []
 			})
 		}
 	},

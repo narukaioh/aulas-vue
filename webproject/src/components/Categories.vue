@@ -32,7 +32,7 @@ export default {
 	methods: {
 		get
 		getAllCategories () {
-			getAllCategories().then(res => {
+			getCategory().then(res => {
 				this.categories = res.categories
 			})
 		}
