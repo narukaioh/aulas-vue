@@ -4,8 +4,10 @@ div.inner
 	section
 		header.main
 			h1 {{data.title}}
+			h2 {{data.subtitle}}
 		span.image.main
 			img(v-bind:src='data.image', v-bind:alt='data.title')
+		p: router-link(v-bind:to="'/category/'+data.category+'/articles'") {{data.category}}
 		p {{data.body}}
 
 </template>

@@ -8,7 +8,7 @@ div.inner
 	p
 		select(v-model="article.category",)
 			option Selecione uma categoria
-			option(v-for="category in categories" v-bind:value="category._id") {{ category.name }}
+			option(v-for="category in categories" v-bind:value="category.slug") {{ category.name }}
 	p: textarea(placeholder="Digite seu artigo" v-model="article.body")
 	button(v-on:click="addArticle(article)") Enviar
 </template>
@@ -25,8 +25,9 @@ export default {
 				title: '',
 				body: '',
 				categories: {
-					_id: '',
+					slug: '',
 				},
+				category: '',
 				subtitle: '',
 			},
 			categories: [],
@@ -42,7 +43,6 @@ export default {
 				this.categories = res.categories} )
 		},
 		addArticle (article) {
-			console.log(article)
 			addArticle(article).then(res => {
 				console.log(res)
 				this.message = res.message
