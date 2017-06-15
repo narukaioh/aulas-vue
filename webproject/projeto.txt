@@ -1,0 +1,66 @@
+Páginas concluidas
+
+Home
+- Organizar opções do menu de acordo com a sessão do usuario
+- Organizar ultimo artigo postado
+- Organizar links das redes sociais de acordo com o usuario que postou a informação
+- Organizar ultimos artigos postados
+
+Página de login
+- Criar autenticação
+- Melhorar design do formulário de login
+- Exibir mensagens ao usuario de sucesso ou falha
+
+Página de cadastro
+- Validar campos
+- Validar confirmação de senha
+
+Página de artigo (usuario publico)
+- Definir estilo para o artigo
+- Dinamizar um artigo para visualizar
+
+Página de categoria (usuario publico)
+- Definir estilo para a pagina de categoria
+- Dinamizar uma categoria para visualizar
+
+Página de Todos os artigos
+- Listagem dos artigos
+- Paginação dos artigos
+
+Pagina de Todas as categorias
+- Listagem das categorias
+
+Página de Usuarios
+- Listagem de usuários (editar e excluir)
+
+Página de meu cadastro
+- Puxar informações da sessão e permitir ediçao
+
+Paginar de artigos
+- Listagem de artigos (editar e excluir)
+
+Página de adicionar artigo
+Página de adicionar categoria
+Página de adicionar usuario
+- Formularios para cadastro
+
+
+-------------------
+
+1) Começar pelo crud de artigos, categorias e cadastro
+- fazer validações necessárias
+- adicionar what you see what you get com vue
+- implementar funções para gerenciamento desses itens
+
+2) Organizar páginas de exibição de conteudo
+- resolver o problema das imagens que forem anexadas
+- resolver o problema da formataçao do texto enviada pelo wyswyg
+
+3) Implementar os outros componentes da Home
+
+4) Autenticação de usuario e configuração de rotas protegidas
+5) Autenticação com sistema de API Key no back-end
+
+----------------------
+
+Melhorias
