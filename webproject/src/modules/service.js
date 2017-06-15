@@ -1,5 +1,11 @@
 import Http from './client' 
 
+// components home
+
+const getMainArticle = () => {
+	return Http.get('/components/mainarticle').then(res => res.data )
+}
+
 // users
 
 const addUser = user => {
@@ -65,4 +71,25 @@ const editArticle = id => {
 	return Http.put('/articles/'+id).then(res => res.data )	
 }
 
-export { addUser, getUser, listUsers, removeUser, editUser, getCategory, getAllArticlesByCategory, addCategory, listCategories, removeCategory, editCategory, getArticle, addArticle, listArticles, removeArticle, editArticle }
+
+
+export { 
+	addUser, 
+	getUser, 
+	listUsers, 
+	removeUser, 
+	editUser, 
+	getCategory, 
+	getAllArticlesByCategory, 
+	addCategory, 
+	listCategories, 
+	removeCategory, 
+	editCategory, 
+	getArticle, 
+	addArticle, 
+	listArticles, 
+	removeArticle, 
+	editArticle,
+
+	getMainArticle
+}

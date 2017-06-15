@@ -3,27 +3,39 @@ section#banner
 	.content
 		header
 			h1 {{article.title}}
-			p A free and fully responsive site template
+			p {{article.subtitle}}
 		p {{article.description}}
 		ul.actions
 			li
-				a.button.big(href='#') Learn More
+				router-link(v-bind:to="'/article/'+article.slug", class="button big") Leia mais
 	span.image.object
-		img(src='images/pic10.jpg', alt='')
+		img(v-bind:src='article.image', v-bind:alt='article.title')
+
 </template>
 
 <script>
-
+import { getMainArticle } from '../../../modules/service'
 export default {
 	data (){
 		return {
 			article: {
 				title: '',
-				description: ''
+				description: '',
+				image: '',
+				slug: ''
 			}
 		}
 	},
-	mounted (){}
+	mounted (){
+		this.getMainArticle()
+	},
+	methods: {
+		getMainArticle(){
+			getMainArticle().then(res => {
+				this.article = res.article
+			})
+		}
+	}
 }
 
 </script>

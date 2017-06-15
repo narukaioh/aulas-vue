@@ -6,6 +6,9 @@ div.inner
 	p: input(type="text" placeholder="Titulo" v-model="article.title")
 	p: input(type="text" placeholder="Subtitulo" v-model="article.subtitle")
 	p
+		input(type="checkbox" v-model="article.featured" id="featured")
+		label(for="featured") Destaque
+	p
 		select(v-model="article.category",)
 			option Selecione uma categoria
 			option(v-for="category in categories" v-bind:value="category._id") {{ category.name }}
@@ -23,6 +26,7 @@ export default {
 		return {
 			article: {
 				title: '',
+				featured: false,
 				body: '',
 				categories: {
 					_id: '',

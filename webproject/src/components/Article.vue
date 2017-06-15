@@ -20,8 +20,8 @@ export default {
 	data () {
 		return {
 			data: {
-				title: '',
-				body: '',
+				title: 'teste',
+				body: 'asdasdsad',
 				image: ''
 			}
 		}
@@ -31,8 +31,9 @@ export default {
 	},
 	methods:{
 		getArticle (){
-			getArticle(this.$route.params.slug).then(res => {
-				this.data = res
+			getArticle(this.$route.params.id).then(res => {
+				console.log("teste")
+				//this.data = res
 			})
 		}
 	},
