@@ -6,7 +6,7 @@ div.inner
 			h1 Categorias
 			
 		div(v-for="category in categories")
-			h2 router-link(v-bind:to="'/category/'+category.slug") {{category.name}}
+			h2: router-link(v-bind:to="'/category/'+category.slug") {{category.name}}
 			p {{category.description}}
 			
 </template>
@@ -14,7 +14,7 @@ div.inner
 <script>
 
 import Header from './elements/common/Header.vue'
-import { getCategory, getAllCategories } from '../modules/service'
+import { listCategories } from '../modules/service'
 
 export default {
 
@@ -30,9 +30,8 @@ export default {
 		'top': Header
 	},
 	methods: {
-		get
 		getAllCategories () {
-			getCategory().then(res => {
+			listCategories().then(res => {
 				this.categories = res.categories
 			})
 		}

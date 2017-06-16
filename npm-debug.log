@@ -1,4 +1,5 @@
 0 info it worked if it ends with ok
+<<<<<<< HEAD
 1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
 2 info using npm@3.5.2
 3 info using node@v4.2.6
@@ -107,3 +108,24 @@
 48 error   path: '/home/jucieny/node_modules' }
 49 error Please try running this command again as root/Administrator.
 50 verbose exit [ -13, true ]
+=======
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'run', 'dev' ]
+2 info using npm@3.10.10
+3 info using node@v6.10.2
+4 verbose stack Error: ENOENT: no such file or directory, open '/home/narukaioh/Projects/aulas-vue/package.json'
+4 verbose stack     at Error (native)
+5 verbose cwd /home/narukaioh/Projects/aulas-vue
+6 error Linux 4.10.0-21-generic
+7 error argv "/usr/bin/nodejs" "/usr/bin/npm" "run" "dev"
+8 error node v6.10.2
+9 error npm  v3.10.10
+10 error path /home/narukaioh/Projects/aulas-vue/package.json
+11 error code ENOENT
+12 error errno -2
+13 error syscall open
+14 error enoent ENOENT: no such file or directory, open '/home/narukaioh/Projects/aulas-vue/package.json'
+15 error enoent ENOENT: no such file or directory, open '/home/narukaioh/Projects/aulas-vue/package.json'
+15 error enoent This is most likely not a problem with npm itself
+15 error enoent and is related to npm not being able to find a file.
+16 verbose exit [ -2, true ]
+>>>>>>> 5ecbb34ac13acd03f5c946f5f0e7b17f744bdac2

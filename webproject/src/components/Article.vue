@@ -3,10 +3,19 @@ div.inner
 	top
 	section
 		header.main
+<<<<<<< HEAD
 			h1 {{article.title}}
 		span.image.main
 			img(v-bind:src='article.image', v-bind:alt='article.title')
 		p {{article.body}}
+=======
+			h1 {{data.title}}
+			h2 {{data.subtitle}}
+		span.image.main
+			img(v-bind:src='data.image', v-bind:alt='data.title')
+		p: router-link(v-bind:to="'/category/'+data.category+'/articles'") {{data.category}}
+		p {{data.body}}
+>>>>>>> 5ecbb34ac13acd03f5c946f5f0e7b17f744bdac2
 
 </template>
 
