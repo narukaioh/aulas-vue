@@ -9,7 +9,7 @@ div.inner
 				p {{ article.subtitle }}
 			p {{article.body}}
 		span.image.object
-			img(v-bind:src='article.image', v-bind:alt='title')
+			img(v-bind:src='article.image', v-bind:alt='article.title')
 
 </template>
 
@@ -32,7 +32,9 @@ export default {
 	},
 	methods: {
 		getAllArticles () {
-			listArticles().then(res => this.articles = res.articles )
+			listArticles().then(res => {
+				this.articles = res.articles
+			})
 		}
 	}
 }

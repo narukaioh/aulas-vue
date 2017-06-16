@@ -6,6 +6,14 @@ const getMainArticle = () => {
 	return Http.get('/components/mainarticle').then(res => res.data )
 }
 
+const getPortfolio = () => {
+	return Http.get('/components/portfolio').then(res => res.data )
+}
+
+const getLastArticles = () => {
+	return Http.get('/components/lastarticles').then(res => res.data )
+}
+
 // users
 
 const addUser = user => {
@@ -91,5 +99,7 @@ export {
 	removeArticle, 
 	editArticle,
 
-	getMainArticle
+	getMainArticle,
+	getPortfolio,
+	getLastArticles
 }

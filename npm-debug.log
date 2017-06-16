@@ -1,0 +1,109 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 verbose config Skipping project config: /home/jucieny/.npmrc. (matches userconfig)
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly install normalizeTree
+9 silly loadCurrentTree Finishing
+10 silly loadIdealTree Starting
+11 silly install loadIdealTree
+12 silly cloneCurrentTree Starting
+13 silly install cloneCurrentTreeToIdealTree
+14 silly cloneCurrentTree Finishing
+15 silly loadShrinkwrap Starting
+16 silly install loadShrinkwrap
+17 silly loadShrinkwrap Finishing
+18 silly loadAllDepsIntoIdealTree Starting
+19 silly install loadAllDepsIntoIdealTree
+20 silly loadAllDepsIntoIdealTree Finishing
+21 silly idealTree:prePrune jucieny
+21 silly idealTree:prePrune ├── asap@2.0.5
+21 silly idealTree:prePrune ├── errno@0.1.4
+21 silly idealTree:prePrune ├── graceful-fs@4.1.11
+21 silly idealTree:prePrune ├── image-size@0.5.0
+21 silly idealTree:prePrune ├── less@2.7.1
+21 silly idealTree:prePrune ├── mime@1.3.4
+21 silly idealTree:prePrune ├── minimist@0.0.8
+21 silly idealTree:prePrune ├── mkdirp@0.5.1
+21 silly idealTree:prePrune ├── promise@7.1.1
+21 silly idealTree:prePrune ├── prr@0.0.0
+21 silly idealTree:prePrune ├── should-equal@1.0.1
+21 silly idealTree:prePrune ├── should-format@3.0.3
+21 silly idealTree:prePrune ├── should-type-adaptors@1.0.1
+21 silly idealTree:prePrune ├── should-type@1.4.0
+21 silly idealTree:prePrune ├── should-util@1.0.0
+21 silly idealTree:prePrune ├── should@11.2.1
+21 silly idealTree:prePrune └── source-map@0.5.6
+22 silly loadIdealTree Finishing
+23 silly currentTree jucieny
+23 silly currentTree ├── asap@2.0.5
+23 silly currentTree ├── errno@0.1.4
+23 silly currentTree ├── graceful-fs@4.1.11
+23 silly currentTree ├── image-size@0.5.0
+23 silly currentTree ├── less@2.7.1
+23 silly currentTree ├── mime@1.3.4
+23 silly currentTree ├── minimist@0.0.8
+23 silly currentTree ├── mkdirp@0.5.1
+23 silly currentTree ├── promise@7.1.1
+23 silly currentTree ├── prr@0.0.0
+23 silly currentTree ├── should-equal@1.0.1
+23 silly currentTree ├── should-format@3.0.3
+23 silly currentTree ├── should-type-adaptors@1.0.1
+23 silly currentTree ├── should-type@1.4.0
+23 silly currentTree ├── should-util@1.0.0
+23 silly currentTree ├── should@11.2.1
+23 silly currentTree └── source-map@0.5.6
+24 silly idealTree jucieny
+24 silly idealTree ├── asap@2.0.5
+24 silly idealTree ├── errno@0.1.4
+24 silly idealTree ├── graceful-fs@4.1.11
+24 silly idealTree ├── image-size@0.5.0
+24 silly idealTree ├── less@2.7.1
+24 silly idealTree ├── mime@1.3.4
+24 silly idealTree ├── minimist@0.0.8
+24 silly idealTree ├── mkdirp@0.5.1
+24 silly idealTree ├── promise@7.1.1
+24 silly idealTree ├── prr@0.0.0
+24 silly idealTree ├── should-equal@1.0.1
+24 silly idealTree ├── should-format@3.0.3
+24 silly idealTree ├── should-type-adaptors@1.0.1
+24 silly idealTree ├── should-type@1.4.0
+24 silly idealTree ├── should-util@1.0.0
+24 silly idealTree ├── should@11.2.1
+24 silly idealTree └── source-map@0.5.6
+25 silly generateActionsToTake Starting
+26 silly install generateActionsToTake
+27 warn checkPermissions Missing write access to /home/jucieny/node_modules
+28 silly rollbackFailedOptional Starting
+29 silly rollbackFailedOptional Finishing
+30 silly runTopLevelLifecycles Starting
+31 silly runTopLevelLifecycles Finishing
+32 silly install printInstalled
+33 warn enoent ENOENT: no such file or directory, open '/home/jucieny/package.json'
+34 warn jucieny No description
+35 warn jucieny No repository field.
+36 warn jucieny No README data
+37 warn jucieny No license field.
+38 verbose stack Error: EACCES: permission denied, access '/home/jucieny/node_modules'
+38 verbose stack     at Error (native)
+39 verbose cwd /home/jucieny/Projetos/aulas-vue
+40 error Linux 4.4.0-78-generic
+41 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install"
+42 error node v4.2.6
+43 error npm  v3.5.2
+44 error path /home/jucieny/node_modules
+45 error code EACCES
+46 error errno -13
+47 error syscall access
+48 error Error: EACCES: permission denied, access '/home/jucieny/node_modules'
+48 error     at Error (native)
+48 error  { [Error: EACCES: permission denied, access '/home/jucieny/node_modules']
+48 error   errno: -13,
+48 error   code: 'EACCES',
+48 error   syscall: 'access',
+48 error   path: '/home/jucieny/node_modules' }
+49 error Please try running this command again as root/Administrator.
+50 verbose exit [ -13, true ]

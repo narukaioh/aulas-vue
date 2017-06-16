@@ -1,61 +1,35 @@
 <template lang="pug">
 section
 	header.major
-		h2 Ipsum sed dolor
+		h2 Portfólio
 	.posts
-		article
-			a.image(href='#')
-				img(src='images/pic01.jpg', alt='')
-			h3 Interdum aenean
-			p
-				| Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+		article(v-for="job in jobs")
+			routerlink(v-bind:to="'/portfolio/'+job.slug")
+				img(v-bind:src='job.image', alt='job.title')
+			h3 {{job.title}}
+			p {{ job.description }}
 			ul.actions
-				li
-					a.button(href='#') More
-		article
-			a.image(href='#')
-				img(src='images/pic02.jpg', alt='')
-			h3 Nulla amet dolore
-			p
-				| Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-			ul.actions
-				li
-					a.button(href='#') More
-		article
-			a.image(href='#')
-				img(src='images/pic03.jpg', alt='')
-			h3 Tempus ullamcorper
-			p
-				| Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-			ul.actions
-				li
-					a.button(href='#') More
-		article
-			a.image(href='#')
-				img(src='images/pic04.jpg', alt='')
-			h3 Sed etiam facilis
-			p
-				| Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-			ul.actions
-				li
-					a.button(href='#') More
-		article
-			a.image(href='#')
-				img(src='images/pic05.jpg', alt='')
-			h3 Feugiat lorem aenean
-			p
-				| Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-			ul.actions
-				li
-					a.button(href='#') More
-		article
-			a.image(href='#')
-				img(src='images/pic06.jpg', alt='')
-			h3 Amet varius aliquam
-			p
-				| Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-			ul.actions
-				li
-					a.button(href='#') More
+				li: routerlink(v-bind:to="'/portfolio/'+job.slug") Leia mais
 
 </template>
+
+<script>
+
+import {getPortfolio} from '../../../modules/service'
+
+export default {
+	data () {
+		return {
+			jobs: []
+		}
+	},
+	methods: {
+		getPortfolio(){
+			getPortfolio().then(res => {
+				this.jobs = res.jobs
+			})
+		}
+	}
+}
+
+</script>

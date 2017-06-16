@@ -3,10 +3,10 @@ div.inner
 	top
 	section
 		header.main
-			h1 {{data.title}}
+			h1 {{article.title}}
 		span.image.main
-			img(v-bind:src='data.image', v-bind:alt='data.title')
-		p {{data.body}}
+			img(v-bind:src='article.image', v-bind:alt='article.title')
+		p {{article.body}}
 
 </template>
 
@@ -19,9 +19,9 @@ export default {
 	name: 'app',
 	data () {
 		return {
-			data: {
-				title: 'teste',
-				body: 'asdasdsad',
+			article: {
+				title: '',
+				body: '',
 				image: ''
 			}
 		}
@@ -31,9 +31,8 @@ export default {
 	},
 	methods:{
 		getArticle (){
-			getArticle(this.$route.params.id).then(res => {
-				console.log("teste")
-				//this.data = res
+			getArticle(this.$route.params.id).then(article => {
+				this.article = article
 			})
 		}
 	},
