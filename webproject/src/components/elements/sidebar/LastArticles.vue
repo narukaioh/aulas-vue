@@ -4,10 +4,10 @@ section
 		h2 Últimos artigos
 	div.mini-posts
 		article(v-for="article in articles")
-			//router-link(v-bind:to="article.slug"): img(v-bind:src='article.slug')
+			router-link(v-bind:to="article.slug"): img(v-bind:src='article.slug')
 			p {{ article.title }}
-		ul.actions
-			li: a(href='#', class='button') More
+	ul.actions
+		li: a(href='#', class='button') More
 </template>
 
 <script>
@@ -24,9 +24,8 @@ export default {
 		this.getLastArticles()
 	},
 	methods: {
-		getLastArticles: () => {
+		getLastArticles () {
 			getLastArticles().then(res => {
-				console.log(res)
 				this.articles = res.articles
 			})
 		}
