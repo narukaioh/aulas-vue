@@ -26,15 +26,15 @@ const routes = [
 	{ path: '/login', component: Login }, 
 	{ path: '/register', component: Register },	
 	{ path: '/register/password', component: Password },	
-	{ path: '/article/:id', component: Article }, 
+	{ path: '/article/:slug', component: Article }, 
 	{ path: '/articles', component: Articles },
-	{ path: '/category/:id', component: Category }, 
+	{ path: '/category/:slug', component: Category }, 
 	{ path: '/categories', component: Categories },
 	{ path: '/account/article', component: AccArticle }, //formulario para adicionar artigo
-	{ path: '/account/article/:id', component: AccArticle }, //tela para editar artigo
+	{ path: '/account/article/:slug', component: AccArticle }, //tela para editar artigo
 	{ path: '/account/articles', component: AccArticles },
 	{ path: '/account/category', component: AccCategory }, //formulario para adicionar categoria
-	{ path: '/account/category/:id', component: AccCategory }, //tela para editar categoria
+	{ path: '/account/category/:slug', component: AccCategory }, //tela para editar categoria
 	{ path: '/account/categories', component: AccCategories },
 	{ path: '/account/user', component: AccUser }, //formulario para adicionar usuario
 	{ path: '/account/user/:id', component: AccUser }, //tela para editar usuario

@@ -42,8 +42,8 @@ const getAllArticlesByCategory = slug => {
 	return Http.get('/categories/'+slug+'/articles').then(res => res.data)
 }
 
-const getCategory = id => {
-	return Http.get('/category/'+id).then(res => res.data )
+const getCategory = slug => {
+	return Http.get('/categories/'+slug).then(res => res.data )
 }
 
 const addCategory = category => {
@@ -52,12 +52,12 @@ const addCategory = category => {
 const listCategories = () => {
 	return Http.get('/categories').then(res => res.data)
 }
-const removeCategory = id => {
-	return Http.delete('/categories/'+id).then(res => res.data )
+const removeCategory = slug => {
+	return Http.delete('/categories/'+slug).then(res => res.data )
 }
 
-const editCategory = id => {
-	return Http.put('/categories/'+id).then(res => res.data )	
+const editCategory = slug => {
+	return Http.put('/categories/'+slug).then(res => res.data )	
 }
 
 // articles
@@ -75,8 +75,8 @@ const removeArticle = slug => {
 	return Http.delete('/articles/'+slug).then(res => res.data )
 }
 
-const editArticle = id => {
-	return Http.put('/articles/'+id).then(res => res.data )	
+const editArticle = slug => {
+	return Http.put('/articles/'+slug).then(res => res.data )	
 }
 
 
