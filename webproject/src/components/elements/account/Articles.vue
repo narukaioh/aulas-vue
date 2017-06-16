@@ -13,21 +13,17 @@ div.inner
 					th Editar
 					th Remover
 			tbody
-				tr
-					td Titulo de algum artigo qualquer
-					td Tecnologia
-					td 25 may
+				tr(v-for="article in articles" v-bind:index="index")
+					td {{article.title}}
+					td {{article.category}}
+					td {{article.date}}
 					td: button(class="icon fa-edit")
-					td: button(class="icon fa-remove")
-				tr
-					td Titulo de algum artigo qualquer
-					td Moda
-					td 27 may
-					td: button(class="icon fa-edit")
-					td: button(class="icon fa-remove")
+					td: button(v-bind:id="article._id", v-on:click="removeArticle(article._id, index)", class="icon fa-remove")
 </template>
 
 <script>
+
+import { listArticles, removeArticle } from '../../../modules/service'
 
 import Header from '../common/Header.vue'
 
@@ -35,13 +31,31 @@ export default {
 	name: 'app',
 	data () {
 		return {
-			name: 'Ju Dantas',
-			email: 'jucienyds@gmail.com',
-			login: 'narukaioh'
+			articles: [],
+			message: '',
+			index: ''
 		}
 	},
 	components: {
 		'top': Header
+	},
+	mounted (){
+		this.getArticles()
+	},
+	methods: {
+		getArticles(){
+			listArticles().then( res => {
+				this.articles = res.articles
+			})
+		},
+		removeArticle(id, index){
+			removeArticle(id).then( res => {
+				if (res.status) {
+					this.articles.splice(index, 1)
+				}
+				this.message = res.message
+			})
+		}
 	}
 }
 
