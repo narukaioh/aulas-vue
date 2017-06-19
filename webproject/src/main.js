@@ -2,6 +2,26 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './store/store'
 
+const needAuth = auth => auth === true
+
+const requireAuth = (to, from, next) => {
+	const auth = to.meta.requireAuth
+	
+	if (!needAuth(auth)) {
+		console.log(auth)
+		next()
+		return
+	}
+
+	store.dispatch('checkUserToken')
+	.then(() => {
+		next()
+	})
+	.catch(()=>{
+		next({ name: 'auth.signin' })
+	})
+}
+
 Vue.use(VueRouter)
 
 
@@ -32,7 +52,7 @@ const routes = [
 	{ path: '/articles', component: Articles },
 	{ path: '/category/:slug', component: Category }, 
 	{ path: '/categories', component: Categories },
-	{ path: '/account/article', component: AccArticle }, //formulario para adicionar artigo
+	{ path: '/account/article', component: AccArticle, requireAuth: true }, //formulario para adicionar artigo
 	{ path: '/account/article/:slug', component: AccArticle }, //tela para editar artigo
 	{ path: '/account/articles', component: AccArticles },
 	{ path: '/account/category', component: AccCategory }, //formulario para adicionar categoria
@@ -43,7 +63,12 @@ const routes = [
 	{ path: '/account/users', component: AccUsers }
 ]
 
-const router = new VueRouter({ history: true, routes})
+const router = new VueRouter({ 
+	history: true, 
+	routes
+})
+
+router.beforeEach(requireAuth)
 
 new Vue({
   el: '#app',
