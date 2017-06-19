@@ -47,6 +47,7 @@ export default {
 			addUser(user).then(res => {
 				if (res.status) { this.classe = 'sucesso' }
 				else { this.classe = 'problema' }
+				console.log(res)
 				this.message = res.message
 			})
 		}

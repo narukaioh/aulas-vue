@@ -4,33 +4,47 @@
 		form(method='post', action='#')
 			div(class="row uniform")
 				div(class='12u$')
-					input(type="text", v-model='name', placeholder='Login')
+					input(type="text", v-model='user.name', placeholder='Login')
 				div(class='12u$')
-					input(type="password", v-model='password', placeholder='Password')
+					input(type="password", v-model='user.password', placeholder='Password')
 				div(class='2u 12u$(xsmall)')
 					router-link(to='/register') Cadastre-se	
 				div(class='4u 12u$(xsmall)')
 					router-link(to='/register/password') Esqueci minha senha			
 				div(class='12u$')
 					ul.actions
-						li: button(class='button fit special', type='button', v-on:click="login") Login
+						li: button(class='button fit special', type='button', v-on:click="login(user)") Login
 
 </template>
 
 <script>
-	
+import { login, setToken } from '../../../modules/service'
+
+console.log(login)
+
 export default {
-	name: 'app',
 	data () {
 		return {
-			name: '',
-			password: ''
+			user: {
+				name: '',
+				password: ''
+			}
 		}
 	},
 	methods: {
-		login () {
-			console.log(this.name);
-			console.log(this.password);
+		login (user) {
+			login(user).then( res => {
+				const payload = {
+					user: {
+						name: res.user.login,
+						email: res.user.email						
+					},
+					token: res.token
+				}
+				this.$store.commit("LOGIN", payload)
+				setToken(payload.token)
+			} )
+
 		}
 	}
 }

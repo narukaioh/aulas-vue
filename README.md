@@ -32,3 +32,6 @@ https://html5up.net/editorial
 
 ## Tutorial VueX
 http://www.vuejs-brasil.com.br/vuex/
+
+## SPA autentication
+https://github.com/codecasts/spa-starter-kit

@@ -79,7 +79,15 @@ const editArticle = slug => {
 	return Http.put('/articles/'+slug).then(res => res.data )	
 }
 
+// login
 
+const login = user => {
+	return Http.post('/account/authenticate', user).then(res => res.data )
+}
+
+const setToken = token => {
+	Http.defaults.headers.common['Authorization'] = token
+}
 
 export { 
 	addUser, 
@@ -101,5 +109,8 @@ export {
 
 	getMainArticle,
 	getPortfolio,
-	getLastArticles
+	getLastArticles,
+
+	login,
+	setToken
 }

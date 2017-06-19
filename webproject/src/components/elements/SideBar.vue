@@ -5,7 +5,7 @@ div#sidebar
 		
 		search
 		main-menu
-		last-articles
+		lastarticles
 		contact
 		
 		footer#footer
@@ -34,7 +34,7 @@ export default {
 	components: {
 		'search': Search,
 		'main-menu': MainMenu,
-		'last-articles': LastArticles,
+		'lastarticles': LastArticles,
 		'contact': Contact
 	}
 }
