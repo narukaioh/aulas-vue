@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "localforage": "^1.5.0",
+    "lodash": "^4.17.4",
     "pug": "^2.0.0-rc.1",
     "vue": "^2.2.1",
     "vue-router": "^2.5.3"
