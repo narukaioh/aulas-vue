@@ -86,7 +86,7 @@ const login = user => {
 }
 
 const setToken = token => {
-	Http.defaults.headers.common['Authorization'] = token
+	Http.defaults.headers.common['x-access-token'] = token
 }
 
 export { 
