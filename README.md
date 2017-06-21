@@ -33,5 +33,11 @@ https://html5up.net/editorial
 ## Tutorial VueX
 http://www.vuejs-brasil.com.br/vuex/
 
-## SPA autentication
+## SPA autenticatione
 https://github.com/codecasts/spa-starter-kit
+
+## Persisting user authentication with Vuex in Vue
+https://medium.com/front-end-hacking/persisting-user-authentication-with-vuex-in-vue-b1514d5d3278
+
+## Esqueleto de uma aplicação com Vuex e autenticação
+https://github.com/jjsquady/vue-vuex-auth
