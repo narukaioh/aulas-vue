@@ -22,7 +22,6 @@ export default {
 	},
 	mounted () {
 		this.getCategory()
-		//this.getAllArticlesByCategory()
 	},
 	components: {
 		'top': Header
@@ -30,7 +29,6 @@ export default {
 	methods: {
 		getCategory(){
 			getCategory(this.$route.params.slug).then(res => {
-				console.log(this.category)
 				this.category = res.category
 			})
 		}
