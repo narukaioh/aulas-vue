@@ -13,7 +13,6 @@ const requireAuth = (to, from, next) => {
 	
 	store.dispatch('checkUserToken')
 	.then(() => {
-		console.log("entrou aqui")
 		next()
 	})
 	.catch(()=>{
