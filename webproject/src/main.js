@@ -1,8 +1,12 @@
+'use strict'
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './store/store'
+import router from './router'
+import App from './App.vue'
 
-const needAuth = auth => auth === true
+/*const needAuth = auth => auth === true
 
 const requireAuth = (to, from, next) => {
 	const auth = to.meta.requireAuth
@@ -18,13 +22,12 @@ const requireAuth = (to, from, next) => {
 	.catch(()=>{
 		next({ name: 'home' })
 	})
-}
+}*/
 
 Vue.use(VueRouter)
 
 
-import App from './App.vue'
-import Login from './components/Login.vue'
+/*import Login from './components/Login.vue'
 import Home from './components/Home.vue'
 import Register from './components/Register.vue'
 import Password from './components/elements/login/ForgotPassword.vue'
@@ -61,14 +64,12 @@ const routes = [
 	{ path: '/account/users', component: AccUsers,  meta: { requireAuth: true }  }
 ]
 
-
-
 const router = new VueRouter({ 
 	history: true, 
 	routes
 })
 
-router.beforeEach(requireAuth)
+router.beforeEach(requireAuth)*/
 
 new Vue({
   el: '#app',

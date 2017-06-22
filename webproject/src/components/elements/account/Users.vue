@@ -28,7 +28,6 @@ import Header from '../common/Header.vue'
 import { listUsers, removeUser } from '../../../modules/service'
 
 export default {
-	name: 'app',
 	data () {
 		return {
 			users: [],
