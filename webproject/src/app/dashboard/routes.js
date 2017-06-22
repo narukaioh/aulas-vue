@@ -1,6 +1,6 @@
 
 // Paginas restritas
-import Article from '../../components/Teste.vue'
+import Article from '../../components/elements/account/Article.vue'
 import Articles from '../../components/elements/account/Articles.vue'
 import Category from '../../components/elements/account/Category.vue'
 import Categories from '../../components/elements/account/Categories.vue'
