@@ -23,7 +23,6 @@ import LastArticles from './sidebar/LastArticles.vue'
 import Contact from './sidebar/Contact.vue'
 
 export default {
-	name: 'app',
 	data () {
 		return {
 			allrights: 'Untitled. All rights',

@@ -10,7 +10,7 @@ const routes = [...app]
 const router = new Router({
     routes,
     linkActiveClass: 'active',
-    mode: 'history'
+    history: true
 })
 //    mode: 'history'
 
