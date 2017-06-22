@@ -1,23 +1,49 @@
 
 // Paginas restritas
-import aArticle from '../../components/elements/account/Article.vue'
-import aArticles from '../../components/elements/account/Articles.vue'
-import aCategory from '../../components/elements/account/Category.vue'
-import aCategories from '../../components/elements/account/Categories.vue'
-import aUser from '../../components/elements/account/User.vue'
-import aUsers from '../../components/elements/account/Users.vue'
+import Article from '../../components/Teste.vue'
+import Articles from '../../components/elements/account/Articles.vue'
+import Category from '../../components/elements/account/Category.vue'
+import Categories from '../../components/elements/account/Categories.vue'
+import User from '../../components/elements/account/User.vue'
+import Users from '../../components/elements/account/Users.vue'
 
 const meta = {
-    requireAuth: false
+    requireAuth: true
 }
 
 export default [
     {
         path: '/account',
-        children: [
-            { 
-                component: aArticles, 
-                path: '/articles' }
-        ]
-    }
+        meta
+    },
+    {
+        path: '/account/article',
+        component: Article,
+        meta
+    },
+    {
+        path: '/account/articles',
+        component: Articles,
+        meta
+    },
+    {
+        path: '/account/category',
+        component: Category,
+        meta
+    },
+    {
+        path: '/account/categories',
+        component: Categories,
+        meta
+    },
+    {
+        path: '/account/user',
+        component: User,
+        meta
+    },
+    {
+        path: '/account/users',
+        component: Users,
+        meta
+    }  
 ]
