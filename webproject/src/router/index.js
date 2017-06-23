@@ -12,7 +12,6 @@ const router = new Router({
     linkActiveClass: 'active',
     history: true
 })
-//    mode: 'history'
 
 router.beforeEach(beforeEach)
 

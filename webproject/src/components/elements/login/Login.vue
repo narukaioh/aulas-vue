@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { login, setToken } from '../../../modules/service'
+import { login } from '../../../modules/service'
 
 export default {
 	data () {
@@ -32,7 +32,6 @@ export default {
 	methods: {
 		login (user) {
 			login(user).then( res => {
-				console.log(res)
 				const payload = {
 					user: {
 						name: res.user.login,
@@ -40,9 +39,7 @@ export default {
 					},
 					token: res.token
 				}
-				console.log(payload)
 				this.$store.commit("LOGIN", payload)
-				setToken(payload.token)
 			} )
 
 		}

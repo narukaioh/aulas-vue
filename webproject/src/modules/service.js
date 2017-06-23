@@ -85,7 +85,7 @@ const login = user => {
 	return Http.post('/account/authenticate', user).then(res => res.data )
 }
 
-const setToken = token => {
+const setTokenHeader = token => {
 	Http.defaults.headers.common['x-access-token'] = token
 }
 
@@ -112,5 +112,5 @@ export {
 	getLastArticles,
 
 	login,
-	setToken
+	setTokenHeader
 }
