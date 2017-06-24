@@ -1,10 +1,29 @@
 import localforage from 'localforage'
 import { isEmpty } from 'lodash'
+import { setTokenHeader, removeTokenHeader } from '../modules/service'
 
 export const setToken = ({commit}, payload) => {
     const token = (isEmpty(payload) ? null : payload.token || payload )
     commit('SET_TOKEN', token)
     return Promise.resolve(token)
+}
+
+export const login = ({commit}, payload) => {
+    //adiciona o token no state
+    commit('LOGIN', payload)
+    //adiciona o token no header
+    setTokenHeader(payload.token)
+    //adiciona o token no localstorage
+    localforage.setItem('APP_USER_TOKEN', payload.token)
+}
+
+export const logout = ({commit}) => {
+    //retira o token no state
+    commit('LOGOUT')
+    //Remove o token do header
+    removeTokenHeader()
+    //Retira o token no localstorage
+    localforage.removeItem('APP_USER_TOKEN')
 }
 
 export const checkUserToken = ({ dispatch, state }) => {
@@ -22,7 +41,6 @@ export const checkUserToken = ({ dispatch, state }) => {
             if (isEmpty(token)) {
                 return Promise.reject('NO_TOKEN')    
             }
-            return dispatch('setToken', token)
+            //return dispatch('setToken', token)
         })
-        .then(() => dispatch('loadUser'))
 }

@@ -89,6 +89,10 @@ const setTokenHeader = token => {
 	Http.defaults.headers.common['x-access-token'] = token
 }
 
+const removeTokenHeader = token => {
+	Http.defaults.headers.common['x-access-token'] = ''
+}
+
 export { 
 	addUser, 
 	getUser, 
@@ -112,5 +116,6 @@ export {
 	getLastArticles,
 
 	login,
-	setTokenHeader
+	setTokenHeader,
+	removeTokenHeader
 }

@@ -13,13 +13,13 @@
 					router-link(to='/register/password') Esqueci minha senha			
 				div(class='12u$')
 					ul.actions
-						li: button(class='button fit special', type='button', v-on:click="login(user)") Login
+						li: button(class='button fit special', type='button', v-on:click="signin(user)") Login
 
 </template>
 
 <script>
 import { login } from '../../../modules/service'
-
+import { mapActions } from 'vuex'
 export default {
 	data () {
 		return {
@@ -30,17 +30,23 @@ export default {
 		}
 	},
 	methods: {
-		login (user) {
+		...mapActions(['login','logout']),
+		signin (user) {
 			login(user).then( res => {
-				const payload = {
-					user: {
-						name: res.user.login,
-						email: res.user.email						
-					},
-					token: res.token
+				if (res.status) {
+					const payload = {
+						user: {
+							name: res.user.name,
+							email: res.user.email						
+						},
+						token: res.token
+					}
+					this.login(payload)
+				}else{
+					alert("deu ruim")
 				}
-				this.$store.commit("LOGIN", payload)
-			} )
+				//this.login(payload)*/
+			})
 
 		}
 	}
