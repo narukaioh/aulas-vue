@@ -41,3 +41,6 @@ https://medium.com/front-end-hacking/persisting-user-authentication-with-vuex-in
 
 ## Esqueleto de uma aplicação com Vuex e autenticação
 https://github.com/jjsquady/vue-vuex-auth
+
+## Utilizando Vuex
+https://www.youtube.com/watch?v=BT1kKaZwPRs
