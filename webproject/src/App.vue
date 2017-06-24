@@ -10,7 +10,7 @@ div#wrapper
 import SideBar from './components/elements/SideBar.vue'
 
 export default {
-	name: 'app',
+	name: 'Webproject',
 	components: {
 		'side-bar': SideBar
 	}

@@ -16,7 +16,7 @@ div.inner
 <script>
 
 import Header from './elements/common/Header.vue'
-import { listArticles } from '../modules/service'
+import { listArticles } from '../services/articles'
 
 export default {
 	data () {

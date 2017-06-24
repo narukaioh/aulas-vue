@@ -26,7 +26,7 @@ div.inner
 <script>
 
 import Header from '../common/Header.vue'
-import { listCategories, removeCategory } from '../../../modules/service'
+import { listCategories, removeCategory } from '../../../services/categories'
 
 export default {
 	name: 'app',

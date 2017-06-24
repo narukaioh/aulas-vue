@@ -13,7 +13,7 @@ div.inner
 <script>
 
 import Header from './elements/common/Header.vue'
-import { getArticle } from '../modules/service'
+import { getArticle } from '../services/articles'
 
 export default {
 	name: 'app',

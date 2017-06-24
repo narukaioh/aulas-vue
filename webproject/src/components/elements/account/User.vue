@@ -29,7 +29,7 @@ div.inner
 <script>
 
 import Header from '../common/Header.vue'
-import { getUser, editUser } from '../../../modules/service'
+import { getUser, editUser } from '../../../services/users'
 
 export default {
 	data () {

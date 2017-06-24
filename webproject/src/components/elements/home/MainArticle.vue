@@ -14,7 +14,7 @@ section#banner
 </template>
 
 <script>
-import { getMainArticle } from '../../../modules/service'
+import { getMainArticle } from '../../../services/components'
 export default {
 	data (){
 		return {

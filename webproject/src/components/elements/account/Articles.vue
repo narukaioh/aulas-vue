@@ -23,7 +23,7 @@ div.inner
 
 <script>
 
-import { listArticles, removeArticle } from '../../../modules/service'
+import { listArticles, removeArticle } from '../../../services/articles'
 
 import Header from '../common/Header.vue'
 

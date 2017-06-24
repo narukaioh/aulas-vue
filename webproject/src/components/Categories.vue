@@ -14,7 +14,7 @@ div.inner
 <script>
 
 import Header from './elements/common/Header.vue'
-import { listCategories } from '../modules/service'
+import { listCategories } from '../services/categories'
 
 export default {
 

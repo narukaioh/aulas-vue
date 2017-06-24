@@ -12,7 +12,7 @@
 
 <script>
 
-import { getLastArticles } from '../../../modules/service'
+import { getLastArticles } from '../../../services/components'
 
 export default {
 	data () {

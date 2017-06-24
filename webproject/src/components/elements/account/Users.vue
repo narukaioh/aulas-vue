@@ -25,7 +25,7 @@ div.inner
 <script>
 
 import Header from '../common/Header.vue'
-import { listUsers, removeUser } from '../../../modules/service'
+import { listUsers, removeUser } from '../../../services/users'
 
 export default {
 	data () {

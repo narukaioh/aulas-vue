@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { addUser } from '../../../modules/service'
+import { addUser } from '../../../services/users'
 
 export default {
 	data () {

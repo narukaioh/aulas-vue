@@ -18,7 +18,7 @@ div.inner
 
 <script>
 
-import { addCategory } from '../../../modules/service'
+import { addCategory } from '../../../services/categories'
 
 export default {
 

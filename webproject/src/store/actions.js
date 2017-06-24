@@ -1,6 +1,6 @@
 import localforage from 'localforage'
 import { isEmpty } from 'lodash'
-import { setTokenHeader, removeTokenHeader } from '../modules/service'
+import { setTokenHeader, removeTokenHeader } from '../services/components'
 
 export const setToken = ({commit}, payload) => {
     const token = (isEmpty(payload) ? null : payload.token || payload )

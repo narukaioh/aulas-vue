@@ -15,7 +15,7 @@ section
 
 <script>
 
-import {getPortfolio} from '../../../modules/service'
+import {getPortfolio} from '../../../services/components'
 
 export default {
 	data () {

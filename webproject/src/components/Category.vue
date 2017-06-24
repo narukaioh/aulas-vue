@@ -11,8 +11,8 @@ div.inner
 <script>
 
 import Header from './elements/common/Header.vue'
-import { getCategory } from '../modules/service'
-//import { getAllArticlesByCategory } from '../modules/service'
+import { getCategory } from '../services/categories'
+//import { getAllArticlesByCategory } from '../services'
 
 export default {
 	data () {

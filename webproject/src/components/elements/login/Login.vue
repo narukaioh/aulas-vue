@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { login } from '../../../modules/service'
+import { login } from '../../../services/components'
 import { mapActions } from 'vuex'
 export default {
 	data () {
