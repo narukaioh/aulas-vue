@@ -1,6 +1,6 @@
 <template lang="pug">
 	
-	section
+	section(v-if="!isLogin")
 		form(method='post', action='#')
 			div(class="row uniform")
 				div(class='12u$')
@@ -14,12 +14,14 @@
 				div(class='12u$')
 					ul.actions
 						li: button(class='button fit special', type='button', v-on:click="signin(user)") Login
+	section(v-else)
+		p: button(v-on:click="signout()") Esta logado!
 
 </template>
 
 <script>
 import { login } from '../../../services/components'
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 export default {
 	data () {
 		return {
@@ -29,6 +31,11 @@ export default {
 			}
 		}
 	},
+	computed:{
+		...mapState({
+			isLogin: state => state.token !== ''
+		})
+	},	
 	methods: {
 		...mapActions(['login','logout']),
 		signin (user) {
@@ -48,6 +55,9 @@ export default {
 				//this.login(payload)*/
 			})
 
+		},
+		signout () {
+			this.logout()
 		}
 	}
 }

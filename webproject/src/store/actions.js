@@ -41,6 +41,16 @@ export const checkUserToken = ({ dispatch, state }) => {
             if (isEmpty(token)) {
                 return Promise.reject('NO_TOKEN')    
             }
-            //return dispatch('setToken', token)
+            return dispatch('setToken', token)
         })
+        .then(() => dispatch('loadUser'))
 }
+
+export const loadUser = ({ dispatch }) => services.loadUserData()
+  // store user's data
+  .then(user => dispatch('setUser', user.data))
+  .catch(() => {
+    // Process failure, delete the token
+    dispatch('setToken', '')
+    return Promise.reject('FAIL_IN_LOAD_USER') // keep promise chain
+  })

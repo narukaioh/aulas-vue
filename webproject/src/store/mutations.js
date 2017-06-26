@@ -7,5 +7,8 @@ export default {
     'LOGOUT' (state) {
         state.user = { name: '', email: '', level: ''}
         state.token = ''
+    },
+    'SET_TOKEN' (state, token) {
+        state.token = token
     }
 }

@@ -44,3 +44,6 @@ https://github.com/jjsquady/vue-vuex-auth
 
 ## Utilizando Vuex
 https://www.youtube.com/watch?v=BT1kKaZwPRs
+
+## User level
+http://www.vuejs-brasil.com.br/acl-vue/
