@@ -1,6 +1,6 @@
 import localforage from 'localforage'
 import { isEmpty } from 'lodash'
-import { setTokenHeader, removeTokenHeader } from '../services/components'
+import { setTokenHeader, removeTokenHeader, loadUserData } from '../services/components'
 
 export const setToken = ({commit}, payload) => {
     const token = (isEmpty(payload) ? null : payload.token || payload )
@@ -42,14 +42,19 @@ export const checkUserToken = ({ dispatch, state }) => {
             if (isEmpty(token)) {
                 return Promise.reject('NO_TOKEN')    
             }
+            //seta o token no store
             return dispatch('setToken', token)
         })
         .then(() => dispatch('loadUser'))
 }
 
-export const loadUser = ({ dispatch }) => services.loadUserData()
+export const setUser = ({commit}, user) => {
+    commit('SET_USER', user)
+}
+
+export const loadUser = ({ dispatch }) => loadUserData()
   // store user's data
-  .then(user => dispatch('setUser', user.data))
+  .then(user => dispatch('setUser', user))
   .catch(() => {
     // Process failure, delete the token
     dispatch('setToken', '')

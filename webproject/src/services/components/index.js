@@ -27,3 +27,7 @@ export const setTokenHeader = token => {
 export const removeTokenHeader = token => {
 	Http.defaults.headers.common['x-access-token'] = ''
 }
+
+export const loadUserData = user => {
+	return Http.get('/users/me').then( res => res.data )
+}
