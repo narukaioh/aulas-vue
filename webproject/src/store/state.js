@@ -4,5 +4,6 @@ export default {
         email: '',
         level: ''
     },
-    token: ''
+    token: '',
+    isSignin: null
 }

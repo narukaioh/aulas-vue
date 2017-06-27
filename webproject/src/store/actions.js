@@ -27,6 +27,7 @@ export const logout = ({commit}) => {
 }
 
 export const checkUserToken = ({ dispatch, state }) => {
+
     //Verifica se o token não está vazio
     if (!isEmpty(state.token)) {
         return Promise.resolve(state.token)

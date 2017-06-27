@@ -17,7 +17,8 @@ const requireAuth = (to, from, next) => {
 		next()
 	})
 	.catch(()=>{
-		next({ name: 'home' })
+		console.log("deu ruim")
+		//next({ name: 'home' })
 	})
 }
 
