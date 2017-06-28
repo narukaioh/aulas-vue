@@ -12,6 +12,7 @@ export default {
         state.token = token
     },
     'SET_USER' (state, user) {
-        state.user = user
+        state.user.name = user.name
+        state.user.email = user.email
     }
 }
