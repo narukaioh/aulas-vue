@@ -18,7 +18,7 @@ section
 
 <script>
 
-import {getRepositories} from '../../../services/github'
+import {getRepositories, getFileInRepository} from '../../../services/github'
 
 export default {
 	data () {
@@ -40,8 +40,15 @@ export default {
 						url: item.html_url
 					}
 				})
+				getImages()
+			})
+		},
+		getImages(){
+			this.jobs.map(item => {
+				console.log(item)
 			})
 		}
+
 	}
 }
 
