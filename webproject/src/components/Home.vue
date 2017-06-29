@@ -1,7 +1,7 @@
 <template lang="pug"> 
 div.inner
 	top
-	main-article
+	//main-article
 	portfolio
 </template>
 

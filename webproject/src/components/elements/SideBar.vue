@@ -4,8 +4,8 @@ div#sidebar
 	div.inner
 		
 		search
-		main-menu
-		lastarticles
+		//main-menu
+		//lastarticles
 		contact
 		
 		footer#footer

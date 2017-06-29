@@ -1,3 +1,5 @@
+'use strict'
+
 import Http from '../github-client'
 
 export const getRepositories = () => {
@@ -5,5 +7,5 @@ export const getRepositories = () => {
 }
 
 export const getFileInRepository = (repo, dir) => {
-    return Http.get('repos/narukaioh/'+repo+'/contents/'+dir).then( res => res.data )
+    return Http.get(`repos/narukaioh/${repo}/contents/${dir}`).then( res => res.data )
 }
