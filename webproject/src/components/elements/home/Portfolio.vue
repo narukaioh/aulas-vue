@@ -28,8 +28,7 @@ export default {
 		}
 	},
 	mounted () {
-		this.getPortfolio()
-		
+		//this.getPortfolio()
 	},
 	methods: {
 		getPortfolio(){
