@@ -13,7 +13,7 @@ div.inner
 			option Selecione uma categoria
 			option(v-for="category in categories" v-bind:value="category.slug") {{ category.name }}
 	p: textarea(placeholder="Digite seu artigo" v-model="article.body")
-	p: froala(:tag="'textarea'", :config="config", v-model="article.body")
+
 	button(v-on:click="addArticle(article)") Enviar
 </template>
 
@@ -22,7 +22,7 @@ div.inner
 import Header from '../common/Header.vue'
 import { addArticle } from '../../../services/articles'
 import { listCategories } from '../../../services/categories'
-import VueFroala from 'vue-froala-wysiwyg'
+
 export default {
 	data () {
 		return {
@@ -37,12 +37,7 @@ export default {
 				subtitle: '',
 			},
 			categories: [],
-			message: '',
-			config: {
-				events: {
-					'froalaEditor.initialized': () => console.log('inicializado')
-				}
-			}
+			message: ''
 		}
 	},
 	mounted () {
@@ -55,9 +50,7 @@ export default {
 		},
 		addArticle (article) {
 			addArticle(article).then(res => {
-				console.log(res)
 				this.message = res.message
-				//this.article = []
 			})
 		}
 	},
