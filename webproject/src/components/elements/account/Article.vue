@@ -13,6 +13,7 @@ div.inner
 			option Selecione uma categoria
 			option(v-for="category in categories" v-bind:value="category.slug") {{ category.name }}
 	p: textarea(placeholder="Digite seu artigo" v-model="article.body")
+
 	button(v-on:click="addArticle(article)") Enviar
 </template>
 
@@ -49,9 +50,7 @@ export default {
 		},
 		addArticle (article) {
 			addArticle(article).then(res => {
-				console.log(res)
 				this.message = res.message
-				//this.article = []
 			})
 		}
 	},

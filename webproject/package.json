@@ -14,6 +14,7 @@
     "lodash": "^4.17.4",
     "pug": "^2.0.0-rc.1",
     "vue": "^2.2.1",
+    "vue-froala-wysiwyg": "^2.0.0",
     "vue-router": "^2.5.3"
   },
   "devDependencies": {

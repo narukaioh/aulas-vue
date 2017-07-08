@@ -3,10 +3,10 @@
 div#sidebar
 	div.inner
 		
-		search
+		//search
 		main-menu
-		lastarticles
-		contact
+		//lastarticles
+		//contact
 		
 		footer#footer
 			p.copyright &copy; {{allrights}} - 
