@@ -14,8 +14,9 @@
     "lodash": "^4.17.4",
     "pug": "^2.0.0-rc.1",
     "vue": "^2.2.1",
-    "vue-froala-wysiwyg": "^2.0.0",
-    "vue-router": "^2.5.3"
+    "vue-quill-editor": "^2.2.4",
+    "vue-router": "^2.5.3",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -27,9 +28,9 @@
     "file-loader": "^0.9.0",
     "node-sass": "^4.5.0",
     "sass-loader": "^5.0.1",
+    "style-loader": "^0.18.2",
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.2.1",
-    "vuex": "^2.3.1",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   }
